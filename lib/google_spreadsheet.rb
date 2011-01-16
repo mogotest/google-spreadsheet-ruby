@@ -92,7 +92,7 @@ module GoogleSpreadsheet
       module_function
         
         def encode_query(params)
-          return params.map(){ |k, v| CGI.escape(k) + "=" + CGI.escape(v) }.join("&")
+          return params.map(){ |k, v| CGI.escape(k.to_s) + "=" + CGI.escape(v.to_s) }.join("&")
         end
         
         def h(str)
